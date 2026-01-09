@@ -1,0 +1,158 @@
+/* Import Font agar mirip dengan desain */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+    color: #1a1a1a;
+    line-height: 1.7;
+}
+
+/* Header & Navigasi (Poin 2) */
+header {
+    background: #ffffff;
+    padding: 2rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+}
+
+header img {
+    height: 40px; 
+}
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: bold;
+    color: var(--orange);
+    font-size: 1.2rem;
+}
+
+.logo img {
+    height: 450px;
+    width: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+nav ul li a {
+    color: #1a1a1a;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #666;
+}
+
+/* Kontainer Utama (Poin 4, 6, 7) */
+main {
+    padding: 80px 5%;
+    max-width: 1100px;
+    margin: auto;
+}
+
+h2 {
+    font-size: 3rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+}
+
+p {
+    color: #555;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+/* Form Styling (Poin 5 & 7) */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 450px;
+    background: #f9f9f9;
+    padding: 30px;
+    border-radius: 8px;
+}
+
+input, select {
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    background: #fff;
+}
+
+/* Tombol Hitam Solid (Poin 5) */
+button {
+    background: #000000;
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: opacity 0.3s;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+/* Tabel (Poin 5b) */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 40px;
+}
+
+th {
+    text-align: left;
+    padding: 15px;
+    border-bottom: 2px solid #000;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+
+td {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+/* Responsivitas (Poin 8) */
+@media (max-width: 768px) {
+    h2 {
+        font-size: 2rem;
+    }
+    
+    header {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    nav ul {
+        gap: 15px;
+        font-size: 0.8rem;
+    }
+}

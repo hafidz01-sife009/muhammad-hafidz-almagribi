@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaksi - Aplikasi Web Saya</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Dasar - Mengambil dari tema Beranda */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* --- NAVIGATION (Senada dengan Beranda) --- */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 8%;
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .site-logo {
+            height: 45px;
+            width: auto;
+        }
+
+        .site-name {
+            font-weight: 600;
+            font-size: 1.3rem;
+            color: #2c3e50;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #555;
+            font-weight: 500;
+            transition: 0.3s;
+            position: relative;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: #007bff;
+        }
+
+        /* Efek garis bawah biru */
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: #007bff;
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after, .nav-links a.active::after {
+            width: 100%;
+        }
+
+        /* --- KONTEN TRANSAKSI --- */
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        h1, h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        /* Card Style (Senada dengan Step Cards Beranda) */
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #666;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            outline: none;
+            transition: 0.3s;
+            font-size: 0.95rem;
+        }
+
+        input:focus, select:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 0 3px rgba(0,123,255,0.1);
+        }
+
+        .btn-simpan {
+            background-color: #007bff;
+            color: white;
+            padding: 14px;
+            width: 100%;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: 0.3s;
+            box-shadow: 0 4px 10px rgba(0,123,255,0.2);
+        }
+
+        .btn-simpan:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        /* Table Styling */
+        .table-container {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th {
+            background-color: #f8f9fa;
+            color: #888;
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            padding: 15px;
+            text-align: left;
+            border-bottom: 2px solid #eee;
+        }
+
+        td {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+            font-size: 0.95rem;
+        }
+
+        tr:hover {
+            background-color: #fcfcfc;
+        }
+
+        .btn-delete {
+            color: #e74c3c;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .btn-delete:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo-container">
+            <img src="assets/img 1.jpg" alt="Logo" class="site-logo">
+            <span class="site-name">Wordpress</span>
+        </a>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="transaksi.html" class="active">Transaksi</a></li>
+            <li><a href="profil.html">Profil</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>Form Transaksi</h1>
+        
+        <div class="card">
+            <div class="form-group">
+                <label>Nama Transaksi</label>
+                <input type="text" id="nama_item" placeholder="Contoh: Pembelian Buku">
+            </div>
+            <div class="form-group">
+                <label>Jumlah</label>
+                <input type="number" id="jumlah_item" placeholder="0">
+            </div>
+            <div class="form-group">
+                <label>Kategori</label>
+                <select id="kategori_item">
+                    <option value="">-- Pilih Kategori --</option>
+                    <option value="Elektronik">Elektronik</option>
+                    <option value="Furniture">Furniture</option>
+                </select>
+            </div>
+            <button class="btn-simpan" id="btn_simpan">SIMPAN TRANSAKSI</button>
+        </div>
+
+        <h2>Daftar Transaksi</h2>
+        <div class="card table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>NAMA TRANSAKSI</th>
+                        <th>JUMLAH</th>
+                        <th>KATEGORI</th>
+                        <th>AKSI</th>
+                    </tr>
+                </thead>
+                <tbody id="tabel_body">
+                    </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="jscript.js"></script>
+</body>
+</html>
